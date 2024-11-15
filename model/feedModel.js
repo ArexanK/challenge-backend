@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 
 const schema = mongoose.Schema;
 const feedSchema = new schema({
+
+  userName: {
+    type: String,
+    required: true,
+  },
   title: {
     type: String,
     required: true,
@@ -10,10 +15,6 @@ const feedSchema = new schema({
     type: String,
     required: true,
     minlength: 40,
-  },
-  user: {
-    type: schema.Types.ObjectId,
-    ref: "user",
   },
 
   created_at: {

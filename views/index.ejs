@@ -3,26 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>crud</title>
   </head>
   <body>
     <h1>Welcome to Facebook</h1>
-    <form action="/add-new-post">
-      <button>create new post</button>
+    <form action="/save-post" method="post">
+      <input type="text" name="title" placeholder="Title" required />
+      <textarea
+        name="message"
+        placeholder="message (at least 40 characters)"
+      ></textarea>
+      <button type="submit">Add New Post</button>
     </form>
-    <% if posts.length > 0 { %>
-        <% for (let i = 0; i < post.length; i++){ %>
-<div>
-    <h2><%= posts[i].title %> </h2>
-    <p><%= posts[i].description %></p>
-    <button>
-        <a href="/delete-post/<%=posts[i]_id%>">edit post</a>
-        <a href="/edit-post/<%=posts[i]_id%>">delete post</a>
+    <% if (feed.length > 0) { %>
+      <% for(let i = 0; i < feed.length; i++) { %>
+        <div>
+          <h3><%= feed.title %></h3>
+          <p><%= feed.message %></p>
+          <p><small><%= feed.created_at %></small></p>
+          <a href="/edit-post/<%= feed[i]._id %>">Edit</a>
+          <a href="/delete-post/<%= feed[i]._id %>">Delete</a>
+        </div>
+      <% } %>
+    <% } else { %>
+      <p>No posts available</p>
+    <% } %>
 
-    </button>
-</div>
-        <%} %>
-
-   <% } %>
   </body>
 </html>

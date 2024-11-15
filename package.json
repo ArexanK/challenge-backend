@@ -23,6 +23,7 @@
     "express": "^4.21.1",
     "mongoose": "^8.8.1",
     "nodeman": "^1.1.2",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "uuid": "^11.0.3"
   }
 }
