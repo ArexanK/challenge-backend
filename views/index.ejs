@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome to Facebook</h1>
+    <form action="/add-new-post">
+      <button>create new post</button>
+    </form>
+    <% if posts.length > 0 { %>
+        <% for (let i = 0; i < post.length; i++){ %>
+<div>
+    <h2><%= posts[i].title %> </h2>
+    <p><%= posts[i].description %></p>
+    <button>
+        <a href="/delete-post/<%=posts[i]_id%>">edit post</a>
+        <a href="/edit-post/<%=posts[i]_id%>">delete post</a>
+
+    </button>
+</div>
+        <%} %>
+
+   <% } %>
+  </body>
+</html>
