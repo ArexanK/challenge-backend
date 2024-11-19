@@ -6,12 +6,15 @@ const feedModel = require("../model/feedModel");
 const getHomePage = (req, res) => {
   feedModel
     .find()
-    .then((feed) => {
-      res.render("index", { feed });
+    .then((result) => {
+      res.render("index", { feed: result });
     })
-    .catch((err) => err);
-};
 
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("An error occurred while fetching the feed.");
+    });
+};
 const getPostId = (req, res) => {
   const postId = req.params.postId;
   feedModel

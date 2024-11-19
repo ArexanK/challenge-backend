@@ -8,6 +8,7 @@
   <body>
     <h1>Welcome to Facebook</h1>
     <form action="/save-post" method="post">
+      <input type="text" name="userName" placeholder="username" required />
       <input type="text" name="title" placeholder="Title" required />
       <textarea
         name="message"
@@ -18,9 +19,10 @@
     <% if (feed.length > 0) { %>
       <% for(let i = 0; i < feed.length; i++) { %>
         <div>
-          <h3><%= feed.title %></h3>
-          <p><%= feed.message %></p>
-          <p><small><%= feed.created_at %></small></p>
+          <h2><%= feed[i].userName %></h2>
+          <h3><%= feed[i].title %></h3>
+          <p><%= feed[i].message %></p>
+          <p><small><%= feed[i].created_at %></small></p>
           <a href="/edit-post/<%= feed[i]._id %>">Edit</a>
           <a href="/delete-post/<%= feed[i]._id %>">Delete</a>
         </div>
@@ -28,6 +30,5 @@
     <% } else { %>
       <p>No posts available</p>
     <% } %>
-
   </body>
 </html>

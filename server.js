@@ -3,6 +3,7 @@ require("./config/mongoose");
 require("dotenv").config();
 const app = express();
 const PORT = 3200;
+const routes = require("./config/routes");
 
 //EJS
 app.set("view engine", "ejs");
@@ -13,9 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //routes
-app.get("/", (req, res) => {
-  res.render("index");
-});
+app.use("/", routes);
 
 //server
 app.listen(PORT, () => {
