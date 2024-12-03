@@ -28,7 +28,7 @@ const getPostId = (req, res) => {
 };
 
 const savePost = (req, res) => {
-  const { title, message } = req.body;
+  const { userName,created_at, title, message } = req.body;
   const NewPost = new feedModel(req.body);
   NewPost.save()
     .then(() => {
@@ -52,6 +52,8 @@ const editPost = (req, res) => {
     });
 };
 
+
+
 const deletePost = (req, res) => {
   feedModel
     .findByIdAndDelete(req.params.postId)
@@ -70,4 +72,5 @@ module.exports = {
   savePost,
   editPost,
   deletePost,
+  
 };

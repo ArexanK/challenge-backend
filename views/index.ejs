@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>crud</title>
+    <title>CRUD </title>
   </head>
   <body>
     <h1>Welcome to Facebook</h1>
@@ -19,10 +19,10 @@
     <% if (feed.length > 0) { %>
       <% for(let i = 0; i < feed.length; i++) { %>
         <div>
-          <h2><%= feed[i].userName %></h2>
+          <h3><%= feed[i].userName %></h3>
+          <p><small><%= feed[i].created_at %></small></p>
           <h3><%= feed[i].title %></h3>
           <p><%= feed[i].message %></p>
-          <p><small><%= feed[i].created_at %></small></p>
           <a href="/edit-post/<%= feed[i]._id %>">Edit</a>
           <a href="/delete-post/<%= feed[i]._id %>">Delete</a>
         </div>
